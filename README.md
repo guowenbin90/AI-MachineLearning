@@ -1,1 +1,1 @@
-# AI-MachineLearning
+# Introduction to Machine Learning
