@@ -1,7 +1,11 @@
 # Introduction to Machine Learning
 [Scikit Learn](https://scikit-learn.org/stable/supervised_learning.html#supervised-learning)
 ## Navie Bayes
-
+- Gaussian Naive Bayes
+- Multinomial Naive Bayes
+- Complement Naive Bayes
+- Bernoulli Naive Bayes
+- Categorical Naive Bayes
 ## Support Vector Machines
 
 ## Decision Trees
