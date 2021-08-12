@@ -7,7 +7,8 @@
 - Bernoulli Naive Bayes
 - Categorical Naive Bayes
 ## Support Vector Machines
-
+- Classification
+- Regression
 ## Decision Trees
 
 ## Choose Algorithm
