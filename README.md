@@ -10,7 +10,8 @@
 - Classification
 - Regression
 ## Decision Trees
-
+- Classification
+- Regression
 ## Choose Algorithm
 
 ## Datasets and Questions
