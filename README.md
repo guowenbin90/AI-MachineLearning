@@ -21,5 +21,5 @@
 ## Outliers
 
 ## Clustering
-
+- K-means
 ## Feature Scaling
