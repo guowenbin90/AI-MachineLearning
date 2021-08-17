@@ -15,9 +15,9 @@
 ## Choose Algorithm
 
 ## Datasets and Questions
-
+- 
 ## Regressions
-
+- Linear Regression
 ## Outliers
 
 ## Clustering
