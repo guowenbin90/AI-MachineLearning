@@ -15,7 +15,7 @@
 ## Choose Algorithm
 
 ## Datasets and Questions
-- 
+- Patterns
 ## Regressions
 - Linear Regression
 ## Outliers
