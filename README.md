@@ -23,6 +23,11 @@
 5. evaluate it accuracy
 ## Datasets and Questions
 - Patterns
+### Types of Data
+- numerical - numerical values (numbers, e.g. salary)  
+- categorical - limited number of discrete values (category, e.g. star of movie)
+- time series - temporal value (date, timestamp)
+- text - words
 ## Regressions
 - Linear Regression
 ## Outliers
