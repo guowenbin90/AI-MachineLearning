@@ -29,7 +29,7 @@
 - time series - temporal value (date, timestamp)
 - text - words
 ## Regressions
-- Linear Regression
+- Continous supervised learning
 ## Outliers
 
 ## Clustering
