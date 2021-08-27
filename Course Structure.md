@@ -30,6 +30,9 @@
 - text - words
 ## Regressions
 - Continous supervised learning
+- Minimize sum of the squared errors (SSE)
+1. Ordinary Least Squares
+2. Stochastic Gradient Descent
 ## Outliers
 
 ## Clustering
