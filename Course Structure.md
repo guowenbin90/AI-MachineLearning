@@ -32,7 +32,16 @@
 - Continous supervised learning
 - Minimize sum of the squared errors (SSE)
 1. Ordinary Least Squares
-2. Stochastic Gradient Descent
+2. Stochastic Gradient Descent  
+- r<sup>2</sup> (r squared)(0<r<sup>2</sup><1): how much of my change in the output (y) is explained by the change in my input  
+
+Comparing Classification & Regression
+| Property   |      Supervised classification      |  Regression |
+|:----------|:-------------|:------|
+| Output type |  Discrete (class labels) | Continous (number) |
+| What are you tring to find | Decision boundary | "best fit line" |
+| Evaluation | Accuracy | "Sum of squared error" or r<sup>2</sup>("r squared") |
+
 ## Outliers
 
 ## Clustering
