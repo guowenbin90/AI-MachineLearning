@@ -43,7 +43,11 @@ Comparing Classification & Regression
 | Evaluation | Accuracy | "Sum of squared error" or r<sup>2</sup>("r squared") |
 
 ## Outliers
-
+- Ignore:
+1. Sensor malfuntions
+2. Data entries  
+- Pay attention:
+3. Freak event
 ## Clustering
 - K-means
 ## Feature Scaling
