@@ -48,6 +48,10 @@ Comparing Classification & Regression
 2. Data entries  
 - Pay attention:
 3. Freak event
+- Removal strategy:
+1. Train
+2. Remove points with largest residual errors (10%)
+3. Retrain
 ## Clustering
 - K-means
 ## Feature Scaling
