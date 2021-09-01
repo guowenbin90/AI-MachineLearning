@@ -59,6 +59,8 @@ Comparing Classification & Regression
 2. max_iter
 3. n_init: run with different centroid seeds
 ## Feature Scaling
+rescale = (x-x_min)/(x_max-x_min) (0,1)
+
 These algorithms would be affected by feature rescaling.
 1. SVM with RBF kernel
 2. K-means clustering  
