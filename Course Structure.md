@@ -5,10 +5,12 @@
 - Multinomial Naive Bayes
 - Complement Naive Bayes
 - Bernoulli Naive Bayes
-- Categorical Naive Bayes
+- Categorical Naive Baye
+- clf = GaussianNB()
 ## Support Vector Machines
 - Classification
 - Regression
+- sklearn.svm.SVC(kernel='rbf', C=1.0, gamma='scale')
 ## Decision Trees
 - Classification
 - Regression
