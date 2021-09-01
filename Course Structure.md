@@ -12,6 +12,7 @@
 ## Decision Trees
 - Classification
 - Regression
+- DecisionTreeClassifier: min_samples_splitint or float, default=2
 ## Choose Algorithm
 - k nearest neighbors: classic, simple, easy to understnd
 - adaboot & random forest: 'emsemble methods', meta classifiers built from decision trees
@@ -58,3 +59,10 @@ Comparing Classification & Regression
 2. max_iter
 3. n_init: run with different centroid seeds
 ## Feature Scaling
+These algorithms would be affected by feature rescaling.
+1. SVM with RBF kernel
+2. K-means clustering  
+
+These algorithms would NOT be affected by feature rescaling.
+1. Decision trees
+2. Linear regression
