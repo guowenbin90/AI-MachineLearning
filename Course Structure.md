@@ -54,4 +54,7 @@ Comparing Classification & Regression
 3. Retrain
 ## Clustering
 - K-means
+1. number of clusters
+2. max_iter
+3. n_init: run with different centroid seeds
 ## Feature Scaling
