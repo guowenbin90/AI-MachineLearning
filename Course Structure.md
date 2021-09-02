@@ -70,3 +70,5 @@ These algorithms would be affected by feature rescaling.
 These algorithms would NOT be affected by feature rescaling.
 1. Decision trees
 2. Linear regression
+
+## Text Learning
