@@ -72,3 +72,4 @@ These algorithms would NOT be affected by feature rescaling.
 2. Linear regression
 
 ## Text Learning
+## Feature Selection
