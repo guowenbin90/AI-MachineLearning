@@ -73,3 +73,5 @@ These algorithms would NOT be affected by feature rescaling.
 
 ## Text Learning
 ## Feature Selection
+## PCA
+## Validation
