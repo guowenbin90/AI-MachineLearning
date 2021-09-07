@@ -63,6 +63,8 @@ Comparing Classification & Regression
 ## Feature Scaling
 rescale = (x-x_min)/(x_max-x_min) (0,1)
 
+MinMaxScaler() when the features have dramatically different quantities and large difference
+
 These algorithms would be affected by feature rescaling.
 1. SVM with RBF kernel
 2. K-means clustering  
