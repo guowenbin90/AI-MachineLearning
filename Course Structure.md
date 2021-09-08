@@ -75,5 +75,9 @@ These algorithms would NOT be affected by feature rescaling.
 
 ## Text Learning
 ## Feature Selection
+- Use human intuition
+- Code up the new feature
+- Visualize
+- Repeat
 ## PCA
 ## Validation
