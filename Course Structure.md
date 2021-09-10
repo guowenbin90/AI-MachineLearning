@@ -81,3 +81,4 @@ These algorithms would NOT be affected by feature rescaling.
 - Repeat
 ## PCA
 ## Validation
+## Evaluation Metrics
