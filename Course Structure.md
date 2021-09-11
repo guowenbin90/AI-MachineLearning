@@ -74,6 +74,7 @@ These algorithms would NOT be affected by feature rescaling.
 2. Linear regression
 
 ## Text Learning
+Stopwords, low information
 ## Feature Selection
 - Use human intuition
 - Code up the new feature
