@@ -75,6 +75,10 @@ These algorithms would NOT be affected by feature rescaling.
 
 ## Text Learning
 Stopwords, low information
+
+-Term frequency: bag of words  
+-Inverse document frequency: weighting by how often word occurs in the corpus
+
 ## Feature Selection
 - Use human intuition
 - Code up the new feature
