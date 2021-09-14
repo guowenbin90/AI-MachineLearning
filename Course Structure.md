@@ -84,6 +84,10 @@ Stopwords, low information
 - Code up the new feature
 - Visualize
 - Repeat
+
+Two big univariate feature selection tools in sklearn: SelectPercentile and SelectKBest. 
+- SelectPercentile selects the X% of features that are most powerful (where X is a parameter) 
+- SelectKBest selects the K features that are most powerful (where K is a parameter)
 ## PCA
 ## Validation
 ## Evaluation Metrics
