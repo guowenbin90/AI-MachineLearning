@@ -88,6 +88,8 @@ Stopwords, low information
 Two big univariate feature selection tools in sklearn: SelectPercentile and SelectKBest. 
 - SelectPercentile selects the X% of features that are most powerful (where X is a parameter) 
 - SelectKBest selects the K features that are most powerful (where K is a parameter)
+
+Lasso.fit(features, labels)  
 ## PCA
 ## Validation
 ## Evaluation Metrics
