@@ -91,5 +91,15 @@ Two big univariate feature selection tools in sklearn: SelectPercentile and Sele
 
 Lasso.fit(features, labels)  
 ## PCA
+Maximal Variance  
+Retains maximum amount of information in original data  
+
+- Systematized way to transform input features into principal components (PC)
+- Use principal components as new features
+- PCs are directions in data that maximize variance (minimize information loss) when you project/compress down onto them
+- More variance of data along a PC, higher that PC is ranked
+- Most variance/most information -> first PC  
+  second-most variance (without overlapping w/ first PC) -> second PC 
+- Max no. of PCs = no. of input features
 ## Validation
 ## Evaluation Metrics
