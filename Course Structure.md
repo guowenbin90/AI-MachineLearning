@@ -103,4 +103,6 @@ Retains maximum amount of information in original data
   second-most variance (without overlapping w/ first PC) -> second PC 
 - Max no. of PCs = no. of input features
 ## Validation
+- Give estimate of performance on an independent dataset
+- Serve as check on overfitting
 ## Evaluation Metrics
