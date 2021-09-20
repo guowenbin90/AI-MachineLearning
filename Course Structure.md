@@ -104,5 +104,6 @@ Retains maximum amount of information in original data
 - Max no. of PCs = no. of input features
 ## Validation
 - Give estimate of performance on an independent dataset
-- Serve as check on overfitting
+- Serve as check on overfitting  
+cross_validation.tran_test_split(features, labels, test_size=0.3, random_state=42)
 ## Evaluation Metrics
