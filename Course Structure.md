@@ -107,4 +107,6 @@ Retains maximum amount of information in original data
 - Serve as check on overfitting  
 cross_validation.tran_test_split(features, labels, test_size=0.3, random_state=42)
 ## Evaluation Metrics
-Confusion Matrix
+Confusion Matrix (Row is true labels, column is predicted labels)  
+- Recall: True Positive / (True Positive + False Negative).
+- Precision: True Positive / (True Positive + False Positive).
