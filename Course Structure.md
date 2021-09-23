@@ -108,5 +108,11 @@ Retains maximum amount of information in original data
 cross_validation.tran_test_split(features, labels, test_size=0.3, random_state=42)
 ## Evaluation Metrics
 [Confusion Matrix](https://en.wikipedia.org/wiki/Confusion_matrix) (Row is true labels, column is predicted labels)  
-- Recall: True Positive / (True Positive + False Negative).
-- Precision: True Positive / (True Positive + False Positive).
+- Recall: True Positive / (True Positive + False Negative) (Check the rows) (recall equals sensitive)
+- Precision: True Positive / (True Positive + False Positive) (Check the columns)
+
+- My identifier doesn't have great precision, but it does have good recall. That means nearly every time a POI shows up in my test set, I am able to identify him or her. The cost of this is that I sometimes get some false positives, where non-POIs get flagged.
+- My identifier doesn't have great recall, but it does have good precision. That means whenever a POI gets flagged in my test set, I know with a lot of confidence that it's very likely to be a real POI and not a false alarm. On the other hand, the price I pay for this is that I sometimes miss real POIs, since I'm effectively reluctant to pull the trigger on edge cases.
+
+[Receiver operating characteristic (ROC)](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) curve: plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold settings.  
+- The true-positive rate is also known as sensitivity, recall or probability of detection[9] in machine learning. The false-positive rate is also known as probability of false alarm[9] and can be calculated as (1 − specificity). 
