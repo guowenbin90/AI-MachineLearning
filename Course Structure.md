@@ -115,4 +115,4 @@ cross_validation.tran_test_split(features, labels, test_size=0.3, random_state=4
 - My identifier doesn't have great recall, but it does have good precision. That means whenever a POI gets flagged in my test set, I know with a lot of confidence that it's very likely to be a real POI and not a false alarm. On the other hand, the price I pay for this is that I sometimes miss real POIs, since I'm effectively reluctant to pull the trigger on edge cases.
 
 [Receiver operating characteristic (ROC)](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) curve: plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold settings.  
-- The true-positive rate is also known as sensitivity, recall or probability of detection[9] in machine learning. The false-positive rate is also known as probability of false alarm[9] and can be calculated as (1 − specificity). 
+- The true-positive rate is also known as sensitivity, recall or probability of detection in machine learning. The false-positive rate is also known as probability of false alarm and can be calculated as (1 − specificity). 
