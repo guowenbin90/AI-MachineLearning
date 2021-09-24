@@ -11,26 +11,13 @@ from tester import dump_classifier_and_data
 ### features_list is a list of strings, each of which is a feature name.
 ### The first feature must be "poi".
 features_list = ['poi','salary']
-'''
-features_list = ['poi', 'salary','deferral_payments', 'total_payments', 'loan_advances', 
-'bonus', 'restricted_stock_deferred', 'deferred_income', 'total_stock_value', 'expenses', 
-'exercised_stock_options', 'other', 'long_term_incentive', 'restricted_stock', 
-'director_fees','shared_receipt_with_poi' ] # You will need to use more features
-'''
+
 ### Load the dictionary containing the dataset
 with open("final_project_dataset.pkl", "rb") as data_file:
     data_dict = pickle.load(data_file)
 
 ### Task 2: Remove outliers
-#identified_outliers = ["TOTAL"]
 
-#print ("Original Length", len(data_dict))
-#for outlier in identified_outliers:
-#    data_dict.pop(outlier) 
-
-#keys = data_dict.keys()
-
-#print ("Length after Outlier", len(data_dict))
 
 ### Task 3: Create new feature(s)
 
@@ -51,13 +38,7 @@ labels, features = targetFeatureSplit(data)
 # Provided to give you a starting point. Try a variety of classifiers.
 from sklearn.naive_bayes import GaussianNB
 clf = GaussianNB()
-'''
-clfGB = GaussianNB()
-from sklearn.svm import SVC
-clfSVM = SVC(kernel='rbf',C=100)
-from sklearn.tree import DecisionTreeClassifier
-clfDT= DecisionTreeClassifier()
-'''
+
 ### Task 5: Tune your classifier to achieve better than .3 precision and recall 
 ### using our testing script. Check the tester.py script in the final project
 ### folder for details on the evaluation method, especially the test_classifier
