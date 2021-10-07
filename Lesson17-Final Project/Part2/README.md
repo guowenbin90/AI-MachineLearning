@@ -11,4 +11,4 @@ and if you used an automated feature selection function like SelectKBest,
 please report the feature scores and reasons for your choice of parameter values.
 [relevant rubric items: “create new features”, “intelligently select features”, “properly scale features”]
 
-Note that out of all features, except email_address and poi others are numerical. For these numerical values, 'NaN' can be transferred to 0.
+Note that out of all features, except email_address and poi others are numerical. For these numerical values, 'NaN' can be transferred to 0. Remove outliers of the data to pick the features.
