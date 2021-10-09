@@ -7,7 +7,7 @@ import numpy as np
 sys.path.append("../tools/")
 
 from feature_format import featureFormat, targetFeatureSplit
-from tester import dump_classifier_and_data
+import tester
 
 ### Task 1: Select what features you'll use.
 ### features_list is a list of strings, each of which is a feature name.
@@ -31,6 +31,7 @@ with open("final_project_dataset.pkl", "rb") as data_file:
 identified_outliers = ['LAVORATO JOHN J', 'TOTAL', 'KAMINSKI WINCENTY J', 'BHATNAGAR SANJAY']  # iteration 1
 identified_outliers += ['KEAN STEVEN J', 'DERRICK JR. JAMES V', 'FREVERT MARK A', 'MARTIN AMANDA K'] # iteration 2
 identified_outliers += ['BELFER ROBERT'] # iteration 3
+#identified_outliers = ['TOTAL','FREVERT MARK A', 'LAVORATO JOHN J', 'WHALLEY LAWRENCE G', 'BAXTER JOHN C']
 print ("Original Length", len(data_dict))
 for outlier in identified_outliers:
     data_dict.pop(outlier)    
@@ -46,7 +47,7 @@ def replace(group, stds):
 from sklearn import preprocessing
 for f in initial_features_list:
     a=[data_dict[k][f] for k in keys]
-    #print(a)
+    #print(a[0])
     for i in range(0,len(a)):
         if a[i]=="NaN":
             a[i]=0
@@ -55,13 +56,14 @@ for f in initial_features_list:
     a=replace(a,4)
     # Scaling Data
     ta_scaled = preprocessing.minmax_scale(a)
+    #print(ta_scaled[0])
     i=0
     for key in keys:
         data_dict[key][f]=ta_scaled[i]
         i=i+1
 
 ### Task 3: Create new feature(s)
-
+# Now Adding two new features
 for key in keys:
     if data_dict[key]['from_poi_to_this_person']!=0:
         data_dict[key]['percentage_from_poi']= (data_dict[key]['from_poi_to_this_person'])/float(data_dict[key]['to_messages'])
@@ -72,7 +74,10 @@ for key in keys:
     else:
         data_dict[key]['percentage_to_poi']= (data_dict[key]['from_this_person_to_poi'])/float(data_dict[key]['from_messages'])
     data_dict[key]['ctc']=data_dict[key]['salary']+data_dict[key]['bonus']+data_dict[key]['exercised_stock_options']
-
+    #if data_dict[key]['salary']!=0:
+     #   data_dict[key]['bonus_to_salary'] = data_dict[key]['bonus'] / float(data_dict[key]['salary'])
+    #if data_dict[key]['total_payments']!=0:
+    #    data_dict[key]['bonus_to_total'] = data_dict[key]['bonus'] / float(data_dict[key]['total_payments'])
 
 ### Store to my_dataset for easy export below.
 my_dataset = data_dict
@@ -121,18 +126,30 @@ features_train, features_test, labels_train, labels_test = \
 
 #dump_classifier_and_data(clf, my_dataset, features_list)
 
-#print("GaussianNB:")
-#dump_classifier_and_data(clf_GNB, my_dataset, features_list)
-#print("SVC:")
-#dump_classifier_and_data(clf_SVC, my_dataset, features_list)
+print("GaussianNB:")
+tester.dump_classifier_and_data(clf_GNB, my_dataset, features_list)
+tester.main()
+print("SVC:")
+tester.dump_classifier_and_data(clf_SVC, my_dataset, features_list)
+tester.main()
 print("Decision Tree:")
-dump_classifier_and_data(clf_DT, my_dataset, features_list)
-#print("Kmeans")
-#dump_classifier_and_data(clf_Kmeans, my_dataset, features_list)
+tester.dump_classifier_and_data(clf_DT, my_dataset, features_list)
+tester.main()
+print("Kmeans")
+tester.dump_classifier_and_data(clf_Kmeans, my_dataset, features_list)
+tester.main()
 
-clf_DT.fit(features_train,labels_train)
-pred_DT=clf_DT.predict(features_test)
-from sklearn.metrics import classification_report
-target_names = ['Not PoI', 'PoI']
+#Trying Parameter Tuning to get Best Params
+#from sklearn.model_selection import GridSearchCV
+#param_grid = {'min_samples_split': np.arange(2, 10)}
+#tree = GridSearchCV(DecisionTreeClassifier(), param_grid)
+#tree.fit(features_train, labels_train)
+#print(tree.best_params_)
 
-print( classification_report(labels_test, pred_DT, target_names=target_names))
+
+#clf_DT.fit(features_train,labels_train)
+#pred_DT=clf_DT.predict(features_test)
+#from sklearn.metrics import classification_report
+#target_names = ['Not PoI', 'PoI']
+
+#print( classification_report(labels_test, pred_DT, target_names=target_names))
