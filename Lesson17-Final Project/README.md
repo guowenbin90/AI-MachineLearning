@@ -85,3 +85,23 @@ What is validation, and what’s a classic mistake you can make if you do it wro
 
 ### Question 6:
 Give at least 2 evaluation metrics and your average performance for each of them.  Explain an interpretation of your metrics that says something human-understandable about your algorithm’s performance. [relevant rubric item: “usage of evaluation metrics”]
+
+```
+features_list = ['poi', 'total_payments', 'exercised_stock_options', 'shared_receipt_with_poi','deferred_income', 
+'total_stock_value', 'expenses', 'poi_mail_ratio']
+```
+```
+Now Printing Features Priority
+total_payments 1
+exercised_stock_options 3
+shared_receipt_with_poi 1
+deferred_income 2
+total_stock_value 1
+expenses 1
+poi_mail_ratio 1
+[1 3 1 2 1 1 1]
+Decision Tree:
+DecisionTreeClassifier(min_samples_split=6)
+	Accuracy: 0.83408	Precision: 0.45641	Recall: 0.41100	F1: 0.43252	F2: 0.41934
+	Total predictions: 13000	True positives:  822	False positives:  979	False negatives: 1178	True negatives: 10021
+```
