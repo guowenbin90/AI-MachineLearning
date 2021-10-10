@@ -1,6 +1,12 @@
 # Final Project
 
 ## Part 1 (Initial results):
+### Question 1:
+Summarize for us the goal of this project and how machine learning is useful in trying to accomplish it. As part of your answer, give some background on the dataset and how it can be used to answer the project question. Were there any outliers in the data when you got it, and how did you handle those?  [relevant rubric items: “data exploration”, “outlier investigation”]
+
+**Goal:** To classify POI out of enron email dataset. Precision and Recall are greater than 0.3 at least. Machine learnig can create different models to classify and predict dataset. The dataset has multiple features, POI can be related to some important features. However, the dataset also had outliers, we can retrain to remove points with largest residual errors (10%).
+
+Recall is pretty impressive, but accuracy and precisions are pathetically low. Apparantly, Salary is not the only feature useful to identify POIs effectively.
 
 Try to run the empty one first, it will generate the initial results.
 
@@ -39,13 +45,6 @@ Total no of POIs: 18
 Total no of POIs: 128
 ```
 
-### Question 1:
-Summarize for us the goal of this project and how machine learning is useful in trying to accomplish it. As part of your answer, give some background on the dataset and how it can be used to answer the project question. Were there any outliers in the data when you got it, and how did you handle those?  [relevant rubric items: “data exploration”, “outlier investigation”]
-
-**Goal:** To classify POI out of enron email dataset. Precision and Recall are greater than 0.3 at least. Machine learnig can create different models to classify and predict dataset. The dataset has multiple features, POI can be related to some important features. However, the dataset also had outliers, we can retrain to remove points with largest residual errors (10%).
-
-Recall is pretty impressive, but accuracy and precisions are pathetically low. Apparantly, Salary is not the only feature useful to identify POIs effectively.
-
 ## Part 2 (Final Results)
 ```
 Now Printing Features Priority
@@ -71,6 +70,27 @@ and if you used an automated feature selection function like SelectKBest,
 please report the feature scores and reasons for your choice of parameter values.
 [relevant rubric items: “create new features”, “intelligently select features”, “properly scale features”]
 
+```
+features_list = ['poi', 'total_payments', 'exercised_stock_options', 'shared_receipt_with_poi','deferred_income', 
+'total_stock_value', 'expenses', 'poi_mail_ratio']
+```
+Use ```from sklearn.model_selection import GridSearchCV``` to get Decision Tree Classifier```{'min_samples_split': 6}```
+
+Use ```from sklearn.feature_selection import RFECV``` to find the optimal number of features and rank
+    
+```
+Now Printing Features Priority
+total_payments 1
+exercised_stock_options 3
+shared_receipt_with_poi 1
+deferred_income 2
+total_stock_value 1
+expenses 1
+poi_mail_ratio 1
+[1 3 1 2 1 1 1]
+```
+
+
 ### Question 3:
 What algorithm did you end up using? What other one(s) did you try? How did model performance differ between algorithms?  [relevant rubric item: “pick an algorithm”]
 
@@ -87,19 +107,6 @@ What is validation, and what’s a classic mistake you can make if you do it wro
 Give at least 2 evaluation metrics and your average performance for each of them.  Explain an interpretation of your metrics that says something human-understandable about your algorithm’s performance. [relevant rubric item: “usage of evaluation metrics”]
 
 ```
-features_list = ['poi', 'total_payments', 'exercised_stock_options', 'shared_receipt_with_poi','deferred_income', 
-'total_stock_value', 'expenses', 'poi_mail_ratio']
-```
-```
-Now Printing Features Priority
-total_payments 1
-exercised_stock_options 3
-shared_receipt_with_poi 1
-deferred_income 2
-total_stock_value 1
-expenses 1
-poi_mail_ratio 1
-[1 3 1 2 1 1 1]
 Decision Tree:
 DecisionTreeClassifier(min_samples_split=6)
 	Accuracy: 0.83408	Precision: 0.45641	Recall: 0.41100	F1: 0.43252	F2: 0.41934
