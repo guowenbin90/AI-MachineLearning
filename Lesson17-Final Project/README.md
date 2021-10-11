@@ -46,6 +46,7 @@ Total no of POIs: 128
 ```
 
 ## Part 2 (Final Results)
+
 ```
 Now Printing Features Priority
 deferred_income 2
@@ -74,9 +75,9 @@ please report the feature scores and reasons for your choice of parameter values
 features_list = ['poi', 'total_payments', 'exercised_stock_options', 'shared_receipt_with_poi','deferred_income', 
 'total_stock_value', 'expenses', 'poi_mail_ratio']
 ```
-Use ```from sklearn.model_selection import GridSearchCV``` to get Decision Tree Classifier```{'min_samples_split': 6}```
+Use ```from sklearn.model_selection import GridSearchCV``` to get [Decision Tree Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)```{'min_samples_split': 6}```
 
-Use ```from sklearn.feature_selection import RFECV``` to find the optimal number of features and rank
+Use ```from sklearn.feature_selection import RFECV``` to find the [optimal number of features and rank](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFECV.html)
     
 ```
 Now Printing Features Priority
