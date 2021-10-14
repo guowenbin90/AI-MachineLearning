@@ -95,18 +95,23 @@ poi_mail_ratio 1
 ### Question 3:
 What algorithm did you end up using? What other one(s) did you try? How did model performance differ between algorithms?  [relevant rubric item: “pick an algorithm”]
 
-Decision Tree, I also tried Gaussian NB, KNN.
+I also tried Gaussian Naive Bayes, Support Vector Machines, K menas, and Decision Tree. Decision Tree performed best among the algorithms. Precison, recall and accuracy were better than others.
 
 ### Question 4:
 What does it mean to tune the parameters of an algorithm, and what can happen if you don’t do this well?  How did you tune the parameters of your particular algorithm? What parameters did you tune? (Some algorithms do not have parameters that you need to tune -- if this is the case for the one you picked, identify and briefly explain how you would have done it for the model that was not your final choice or a different model that does utilize parameter tuning, e.g. a decision tree classifier).  [relevant rubric items: “discuss parameter tuning”, “tune the algorithm”]
 
+For the decision tree, I found the min_samples_split and it improved the accuracy. And features list is important, good features got better accuracy.
 
 ### Question 5:
 What is validation, and what’s a classic mistake you can make if you do it wrong? How did you validate your analysis?  [relevant rubric items: “discuss validation”, “validation strategy”]
 
+I used the cross validation, precision and recall were the stardard to evaluate the algorithms.
 
 ### Question 6:
 Give at least 2 evaluation metrics and your average performance for each of them.  Explain an interpretation of your metrics that says something human-understandable about your algorithm’s performance. [relevant rubric item: “usage of evaluation metrics”]
+
+GridSearchCV found the min_samples_split of decision tree.
+RFECV found the optimal number of features and rank.
 
 ```
 Decision Tree:
