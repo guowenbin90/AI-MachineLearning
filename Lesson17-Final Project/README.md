@@ -71,14 +71,17 @@ and if you used an automated feature selection function like SelectKBest,
 please report the feature scores and reasons for your choice of parameter values.
 [relevant rubric items: “create new features”, “intelligently select features”, “properly scale features”]
 
+I used [RFECV](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFECV.html) to find the optimal number of features and rank.
+```from sklearn.feature_selection import RFECV
+rfecv = RFECV(estimator=clfDT, step=1, cv=StratifiedShuffleSplit(labels, 1000, random_state = 42), scoring="f1")
+``` 
+Here are the features I used at the end of the POI identifier.
 ```
 features_list = ['poi', 'total_payments', 'exercised_stock_options', 'shared_receipt_with_poi','deferred_income', 
 'total_stock_value', 'expenses', 'poi_mail_ratio']
 ```
-Use ```from sklearn.model_selection import GridSearchCV``` to get [Decision Tree Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)```{'min_samples_split': 6}```
-
-Use ```from sklearn.feature_selection import RFECV``` to find the [optimal number of features and rank](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFECV.html)
-    
+I added the poi_mail_ratio feature, ```m_ratio = float(pdata['from_poi_to_this_person']) / float(pdata['from_messages'])```, 
+the ratio is the percentage from POI to this person in the all messages. I believe the person who received more emails from poi had large probability to be the poi.
 ```
 Now Printing Features Priority
 total_payments 1
@@ -90,8 +93,6 @@ expenses 1
 poi_mail_ratio 1
 [1 3 1 2 1 1 1]
 ```
-
-
 ### Question 3:
 What algorithm did you end up using? What other one(s) did you try? How did model performance differ between algorithms?  [relevant rubric item: “pick an algorithm”]
 
@@ -101,21 +102,29 @@ I also tried Gaussian Naive Bayes, Support Vector Machines, K menas, and Decisio
 What does it mean to tune the parameters of an algorithm, and what can happen if you don’t do this well?  How did you tune the parameters of your particular algorithm? What parameters did you tune? (Some algorithms do not have parameters that you need to tune -- if this is the case for the one you picked, identify and briefly explain how you would have done it for the model that was not your final choice or a different model that does utilize parameter tuning, e.g. a decision tree classifier).  [relevant rubric items: “discuss parameter tuning”, “tune the algorithm”]
 
 For the decision tree, I found the min_samples_split and it improved the accuracy. And features list is important, good features got better accuracy.
+Use ```from sklearn.model_selection import GridSearchCV``` to get [Decision Tree Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) minimun splited samples ```{'min_samples_split': 6}```.
 
 ### Question 5:
 What is validation, and what’s a classic mistake you can make if you do it wrong? How did you validate your analysis?  [relevant rubric items: “discuss validation”, “validation strategy”]
 
-I used the cross validation, precision and recall were the stardard to evaluate the algorithms.
+I used the cross validation, accuracy, precision and recall were the metrics to evaluate the algorithms.
 
 ### Question 6:
 Give at least 2 evaluation metrics and your average performance for each of them.  Explain an interpretation of your metrics that says something human-understandable about your algorithm’s performance. [relevant rubric item: “usage of evaluation metrics”]
 
-GridSearchCV found the min_samples_split of decision tree.
-RFECV found the optimal number of features and rank.
-
+Here is the results of decision tree classifier.
 ```
 Decision Tree:
 DecisionTreeClassifier(min_samples_split=6)
 	Accuracy: 0.83408	Precision: 0.45641	Recall: 0.41100	F1: 0.43252	F2: 0.41934
 	Total predictions: 13000	True positives:  822	False positives:  979	False negatives: 1178	True negatives: 10021
 ```
+I achieved the accuracy 83.4% to predict the poi probability. Precision 
+
+Recall: True Positive / (True Positive + False Negative) (Check the rows) (recall equals sensitive)
+
+Precision: True Positive / (True Positive + False Positive) (Check the columns)
+
+My identifier doesn't have great precision, but it does have good recall. That means nearly every time a POI shows up in my test set, I am able to identify him or her. The cost of this is that I sometimes get some false positives, where non-POIs get flagged.
+
+My identifier doesn't have great recall, but it does have good precision. That means whenever a POI gets flagged in my test set, I know with a lot of confidence that it's very likely to be a real POI and not a false alarm. On the other hand, the price I pay for this is that I sometimes miss real POIs, since I'm effectively reluctant to pull the trigger on edge cases.
